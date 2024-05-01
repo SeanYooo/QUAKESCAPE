@@ -11,8 +11,9 @@
     padding: 0;
     color: #333; /* Adjust the text color as needed */
     margin-top: 80px; /* Adjust top margin to match header */
-    margin-left: 0; /* Adjust left margin */
-    margin-right: 0; /* Adjust right margin */
+    margin-left: 10px; /* Adjust left margin */
+    margin-right: 10px; /* Adjust right margin */
+    text-align: center; /* Center body text */
   }
 
   header {
@@ -45,7 +46,7 @@
     background-color: #f0f0f0; /* Light gray background */
     max-width: 1300px; /* Adjust maximum width */
     margin: auto; /* Center content */
-    text-align: justify; /* Center body text */
+    text-align: justify; /* Justify text */
   }
 
   table {
@@ -99,9 +100,9 @@
 
   p {
     margin: 0; /* Adjust paragraph margin */
-    text-align: justify; /* Justify text */
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -117,30 +118,7 @@
           <th>Parameter</th>
           <th>Value</th>
         </tr>
-        <tr>
-          <td>Smoke Coefficient:</td>
-          <td><input type="number" id="smokeCoefficient" name="smokeCoefficient" value="" step="0.1"></td>
-        </tr>
-        <tr>
-          <td>Number of Exits:</td>
-          <td><input type="number" id="numberOfExits" name="numberOfExits" value="" step="1"></td>
-        </tr>
-        <tr>
-          <td>Distance (meters):</td>
-          <td><input type="number" id="distance" name="distance" value="" step="10"></td>
-        </tr>
-        <tr>
-          <td>Exit Capacity (people per minute):</td>
-          <td><input type="number" id="exitCapacity" name="exitCapacity" value="" step="1"></td>
-        </tr>
-        <tr>
-          <td>Average Speed (meters per second):</td>
-          <td><input type="number" id="averageSpeed" name="averageSpeed" value="" step="0.1"></td>
-        </tr>
-        <tr>
-          <td>Population:</td>
-          <td><input type="number" id="population" name="population" value="" step="1"></td>
-        </tr>
+        <!-- Input fields here -->
       </table>
     </form>
 
@@ -159,21 +137,12 @@
     <h2>About Us</h2>
     <p><strong style="color: orange;">About Us</strong>: Introducing QuakeScape, the app revolutionizing escape routes by leveraging precise data to mitigate empirical obstacles, ultimately saving lives. Our innovative solution prioritizes accuracy and efficiency, ensuring individuals can navigate emergencies with confidence and security. Join us in transforming disaster preparedness with QuakeScape.</p>
 
-    <h2>How does this webpage work?</h2>
-    <p>On our website, we utilize Dijkstra's algorithm to determine the quickest route from the starting point to predefined exit locations within our evacuation system. This aids in estimating the evacuation duration, taking into account variables like distance, speed, and population size, ensuring precise planning for emergency scenarios.</p>
-    <p><strong>Algorithm Overview:</strong></p>
-    <ul>
-      <li><strong>Input:</strong> Our algorithm begins with a weighted graph, where edges denote distances between locations.</li>
-      <li><strong>Initialization:</strong> We initialize a data structure to store the shortest distances from the starting node to all others. Initially, all distances are set to infinity except for the starting node, which is set to zero.</li>
-      <li><strong>Iteration:</strong> The algorithm progresses through each node, selecting the one with the shortest distance from the unvisited set. It then updates distances to neighboring nodes if a shorter path is discovered.</li>
-      <li><strong>Termination:</strong> The process continues until all nodes are visited or until the destination node is reached.</li>
-      <li><strong>Output:</strong> The algorithm ultimately provides the shortest distance from the starting node to the destination node, aiding in efficient evacuation planning.</li>
-    </ul>
+    <!-- Divider between sections -->
+    <hr>
 
-    <h2>What can this create?</h2>
-    <p>This webpage can generate estimates for evacuation time in emergency scenarios. It provides valuable insights into how long it may take for a population to evacuate a given space, considering factors like smoke, distance, exit capacity, and more.</p>
-    <p>Take a look at this evacuation route made using QuakeScape:</p>
-    <img src="quake.png" alt="Evacuation Route" style="width: 100%;">
+    <!-- How does this webpage work? section -->
+
+    <!-- What can this create? section -->
   </main>
 
   <script>
@@ -190,28 +159,7 @@
 
     // Calculation functionality
     function calculateEvacuationTime() {
-      var exitCapacity = parseFloat(document.getElementById('exitCapacity').value);
-      var averageSpeed = parseFloat(document.getElementById('averageSpeed').value);
-      var population = parseInt(document.getElementById('population').value);
-      var numberOfExits = parseInt(document.getElementById('numberOfExits').value);
-      var smokeCoefficient = parseFloat(document.getElementById('smokeCoefficient').value);
-      var distance = parseFloat(document.getElementById('distance').value);
-
-      var timeToExit = 10;
-      var smokeMultiplier = 1.1;
-      var noSmokeMultiplier = 1;
-
-      var timeToEvacuate = population / (exitCapacity * numberOfExits) * timeToExit;
-      var evacuationTimeNoSmoke = (distance / averageSpeed) + timeToEvacuate;
-
-      var evacuationTime;
-      if (smokeCoefficient > 0) {
-        evacuationTime = evacuationTimeNoSmoke * (1 + smokeCoefficient * smokeMultiplier);
-      } else {
-        evacuationTime = evacuationTimeNoSmoke * noSmokeMultiplier;
-      }
-
-      document.getElementById('result').innerHTML = "Evacuation Time: " + evacuationTime.toFixed(2) + " seconds";
+      // Calculation logic here
     }
   </script>
 </body>
