@@ -11,8 +11,8 @@
     padding: 0;
     color: #333; /* Adjust the text color as needed */
     margin-top: 80px; /* Adjust top margin to match header */
-    margin-left: 10px; /* Adjust left margin */
-    margin-right: 10px; /* Adjust right margin */
+    margin-left: 0; /* Adjust left margin */
+    margin-right: 0; /* Adjust right margin */
     text-align: center; /* Center body text */
   }
 
@@ -28,7 +28,7 @@
   }
 
   header img {
-    max-width: 80px;
+    max-width: 200px; /* Adjust maximum width of the logo */
     vertical-align: middle;
   }
 
@@ -111,56 +111,11 @@
   </header>
 
   <main>
-    <h2>Data Inputs</h2>
-    <form id="networkFlowForm">
-      <table>
-        <tr>
-          <th>Parameter</th>
-          <th>Value</th>
-        </tr>
-        <!-- Input fields here -->
-      </table>
-    </form>
-
-    <div id="calculateButton">
-      <button type="button" onclick="calculateEvacuationTime()">Calculate Evacuation Time</button>
-    </div>
-
-    <div id="clearButton">
-      <button type="button" onclick="clearFields()">Clear</button>
-    </div>
-
-    <div id="result"></div>
-
-    <hr>
-
-    <h2>About Us</h2>
-    <p><strong style="color: orange;">About Us</strong>: Introducing QuakeScape, the app revolutionizing escape routes by leveraging precise data to mitigate empirical obstacles, ultimately saving lives. Our innovative solution prioritizes accuracy and efficiency, ensuring individuals can navigate emergencies with confidence and security. Join us in transforming disaster preparedness with QuakeScape.</p>
-
-    <!-- Divider between sections -->
-    <hr>
-
-    <!-- How does this webpage work? section -->
-
-    <!-- What can this create? section -->
+    <!-- Content goes here -->
   </main>
 
   <script>
-    // Clear fields functionality
-    function clearFields() {
-      document.getElementById("smokeCoefficient").value = "";
-      document.getElementById("numberOfExits").value = "";
-      document.getElementById("distance").value = "";
-      document.getElementById("exitCapacity").value = "";
-      document.getElementById("averageSpeed").value = "";
-      document.getElementById("population").value = "";
-      document.getElementById("result").innerHTML = "";
-    }
-
-    // Calculation functionality
-    function calculateEvacuationTime() {
-      // Calculation logic here
-    }
+    // JavaScript code goes here
   </script>
 </body>
 </html>
